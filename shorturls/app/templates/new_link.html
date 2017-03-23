@@ -17,7 +17,7 @@
        
       <span class="li-text">
         
-        <a href="/list/">LIST  
+        <a href="/list_links/">LIST  
         <i class="fa fa-list" aria-hidden="true"></i></a>  
       </span> 
       
@@ -36,16 +36,31 @@
       </div>
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 form-box">
-          <div class="form-bottom contact-form">
-            <form action="" method="POST">
+          <div class="form-bottom url-submit">
+            <form action="" method="POST" id="url_form">
               {% csrf_token %}
               <div class="form-group">
+                
                 <label class="" for="real_url">Enter your URL</label>
                 <input type="text" name="real_url" placeholder="https://wizeservices.com/careers" class="form-control" required>
+
+                <label class="" for="suggested_short" style="margin-top:15px;">Choose your short url</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">localhost:8000/</span>
+                <input type="text" name="suggested_short" placeholder="hola" class="form-control"> 
+                </div>
+
               </div>
-                    
+            <div class="row">  
+            <div class="col-sm-4">
             <button type="submit" class="btn">Shorten!</button>
-              
+            </div>
+            <div class="col-sm-8" style="display:none;" id="error_msg">
+              <div class="alert alert-danger" role="alert">
+                <strong>Oops!</strong> This is not a valid url
+              </div>
+            </div>
+            </div>
             </form>
           </div>
         </div>

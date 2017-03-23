@@ -6,8 +6,8 @@ from django.db import models
 
 class Link(models.Model):
     creation_datetime = models.DateTimeField(auto_now=False, auto_now_add=True)
-    short_url = models.CharField(max_length=10)
-    real_url = models.TextField()
+    short_url = models.CharField(max_length=10,db_index=True,unique=True)
+    real_url = models.TextField(db_index=True)
     
     class Meta:
         db_table = 'link'
