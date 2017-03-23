@@ -2,8 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect,HttpResponse
 from django.db import transaction
 
-from models import Link
-from encoder import encode,decode
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
+
+from shorturls.app.models import Link
+from shorturls.app.helpers.encoder import encode,decode
 
 
 def create_link(request):
