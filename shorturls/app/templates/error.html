@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static from staticfiles %}
+
+
+<!-- Top menu -->
+<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+  <div class="container" >
+    <div class="navbar-header">
+      <span class="li-text" style="margin-right:25px;">
+        
+        <a href="/new_link/">NEW 
+        <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+      </span> 
+       
+      <span class="li-text">
+        
+        <a href="/list/">LIST  
+        <i class="fa fa-list" aria-hidden="true"></i></a>  
+      </span> 
+      
+    </div>
+  </div>
+</nav>
+
+
+<!-- Top content -->
+<div class="top-content">
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row" style="margin-top:70px;">
+        <div class="col-sm-8 col-sm-offset-2 text">
+          <h1><strong>Whoops!</strong></h1>
+          <h3>We encountered an error</h3>
+          <p>{{message}}</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+
+{% endblock %}

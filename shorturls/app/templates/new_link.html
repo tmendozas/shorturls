@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static from staticfiles %}
+
+
+<!-- Top menu -->
+<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+  <div class="container" >
+    <div class="navbar-header">
+      <span class="li-text" style="margin-right:25px;">
+        
+        <a href="/new_link/">NEW 
+        <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+      </span> 
+       
+      <span class="li-text">
+        
+        <a href="/list/">LIST  
+        <i class="fa fa-list" aria-hidden="true"></i></a>  
+      </span> 
+      
+    </div>
+  </div>
+</nav>
+
+<!-- Top content -->
+<div class="top-content">
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text">
+          <h1><strong>Shorten your URL! </strong></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 form-box">
+          <div class="form-bottom contact-form">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="" for="real_url">Enter your URL</label>
+                <input type="text" name="real_url" placeholder="https://wizeservices.com/careers" class="form-control" required>
+              </div>
+                    
+            <button type="submit" class="btn">Shorten!</button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static from staticfiles %}
+
+
+<!-- Top menu -->
+<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+  <div class="container" >
+    <div class="navbar-header">
+      <span class="li-text" style="margin-right:25px;">
+        
+        <a href="/new_link/">NEW 
+        <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+      </span> 
+       
+      <span class="li-text">
+        
+        <a href="/list/">LIST  
+        <i class="fa fa-list" aria-hidden="true"></i></a>  
+      </span> 
+      
+    </div>
+  </div>
+</nav>
+
+
+<!-- Top content -->
+<div class="top-content">
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row" style="margin-top:50px;">
+        <div class="col-sm-8 col-sm-offset-2 text">
+
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Short</th>
+                <th>URL</th>
+                <th>Creation Datetime</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for tup in links %}
+              <tr>
+                <td>{{tup.0}}</td>
+                <td>{{tup.1}}</td>
+                <td>{{tup.2}}</td>
+              </tr>
+              {% endfor %}
+              
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+
+{% endblock %}
